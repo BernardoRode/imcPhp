@@ -14,9 +14,20 @@ if (
     $sexo = $_POST["sexo"];
     $imc = $peso / pow($altura, 2);
     $idade = 2024 - $ano;
+    $mensagem = null;
+
+    if ($imc >= 0 && $imc <= 18.5) {
+        $mensagem = "Abaixo do peso";
+    } else if ($imc > 18.5 && $imc < 24.9) {
+        $mensagem = "Peso Normal";
+    } else if ($imc >= 24.9 && $imc <= 29.9) {
+        $mensagem = "Obesidade 1";
+    } else {
+        $mensagem = "Obesidade 2";
+    }
+
     if ($sexo == "masculino") {
-       // echo "Sr. $nome, sua data de nascimento é " . $data . " seu peso é $peso e sua altura é $altura";
-       echo "<form>  
+        echo "<form>  
        <label for='nome'>Senhor:</label> <br>
        <input type='text' value = '$nome' readonly> <br>
        <label for='idade'>Idade:</label> <br>
@@ -26,11 +37,14 @@ if (
        <label for='altura'> Altura:</label><br>
        <input type='number' value='$altura' readonly> <br>
        <label for='sexo'> Sexo:</label> <br>
-       <input type='text' value='$sexo' readonly> 
+       <input type='text' value='$sexo' readonly> <br>
+       <label for='imc'> Seu Peso esta </label> <br>
+       <input type='text' value='$mensagem' readonly> <br>
+       <label for='type'> Seu IMC é </label> <br>
+       <input type='text' value='$imc' readonly> <br>
        
        </form>";
     } else {
-        //echo "Sra. $nome, sua data de nascimento é" . $data . " seu peso é $peso e sua altura é $altura";
         echo "<form>  
        <label for='nome'>Senhora:</label>  <br>
        <input type='text' value = '$nome' readonly> <br>
@@ -41,8 +55,11 @@ if (
        <label for='altura'> Altura:</label><br>
        <input type='number' value='$altura' readonly> <br>
        <label for='sexo'> Sexo:</label> <br>
-       <input type='text' value='$sexo' readonly> 
+       <input type='text' value='$sexo' readonly> <br>
+       <label for='imc'> Seu Peso esta </label> <br>
+       <input type='text' value='$mensagem' readonly> <br>
+       <label for='type'> Seu IMC é </label> <br>
+       <input type='text' value='$imc' readonly> <br>
        </form>";
     }
-   
 }

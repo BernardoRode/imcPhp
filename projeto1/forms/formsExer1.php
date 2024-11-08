@@ -23,7 +23,7 @@
         </div>
         <br>
         <div class="input-box">
-            <input type="number" name="altura" placeholder="Altura:"  step="0.1" >
+            <input type="number" name="altura" placeholder="Altura:"  step="0.01" >
         </div>
         <br>
         <div class="input-box">
